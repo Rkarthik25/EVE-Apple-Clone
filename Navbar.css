@@ -1,0 +1,90 @@
+#Navbar_container {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(53, 50, 50);
+  color: white;
+  margin-bottom: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+#Navbar_container > div {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#Navbar_container img {
+  width: 15%;
+}
+p {
+  font-size: x-small;
+}
+p:hover {
+  color: rgb(0, 186, 254);
+  cursor: pointer;
+}
+.font-link {
+  font-family: "Roboto", sans-serif;
+}
+
+#storemenu_subs h3:hover {
+  cursor: pointer;
+  color: rgb(0, 186, 254);
+}
+#storemenu_subs p {
+  font-size: xx-small;
+  color: grey;
+}
+#storemenu_subs {
+  padding-left: 5%;
+}
+#home_carousal_images {
+  margin-top: 15%;
+}
+#home_carousal_images img {
+  width: 100%;
+}
+#mid_body_divs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1%;
+  width: 96%;
+  margin: auto;
+}
+#mid_body_divs img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+}
+#mid_body_divs div {
+  padding: 3%;
+  width: 95%;
+  grid-template-columns: repeat(1, 1fr);
+}
+#mid_body_divs a {
+  width: 10%;
+  margin-left: 7%;
+  margin-right: -2%;
+  color: blue;
+  text-decoration: none;
+}
+#home_start {
+  padding-top: 0.5%;
+  background-color: black;
+  color: white;
+}
+#homepage_container button {
+  border: none;
+  color: blue;
+  background-color: transparent;
+}
+#footer_last {
+  width: 75%;
+  margin: auto;
+  font-size: x-small;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
