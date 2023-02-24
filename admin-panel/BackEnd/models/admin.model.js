@@ -7,7 +7,8 @@ const adminSchema=mongoose.Schema({
     mobile:{type:Number,required:true},
     GST_no:{type:String,required:true},
     password:{type:String,required:true},
-    authenticated:{type:Boolean}
+    authenticated:{type:Boolean},
+    status:{type:Boolean}
 })
 
 const adminModel= mongoose.model("admin",adminSchema) 

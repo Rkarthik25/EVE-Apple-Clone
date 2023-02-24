@@ -59,7 +59,7 @@ if(admin){
     bcrypt.compare(req.body.password, admin[0].password, (err, result)=> {
         if(result){
             const token= jwt.sign({admin:admin[0]._id},"masai")
-            res.send({"msg":"login successfull", "token":token})
+            res.send({"msg":"login successfull", "token":token,"admin":admin})
             console.log("login successfull")
         }
         else res.send("please enter correct password")
@@ -74,6 +74,19 @@ else {
     }
     })
 
+//*update status of the user
+
+adminRouter.patch("/update/:id",async(req,res)=>{
+    const  id= req.params.id
+  console.log(req.body)
+    try{
+await adminModel.findByIdAndUpdate(id,req.body)
+res.send("status is updated")
+    }
+    catch{
+
+    }
+})
 // exporting
 
 module.exports={

@@ -18,7 +18,13 @@ const Navbar = () => {
 <Image src={logo} alt="..." borderRadius="100" width={150} height={150}/>
 </Box>
 <Box display={"flex"} justifyContent={"space-between"} w="10%">
-<Box><Text as="b" fontSize={"20px"} color="green.300">Hi, {name}</Text></Box>
+<Box>
+
+  {
+    name ? <Text as="b" fontSize={"20px"} color="green.300">Hi,{name}</Text>
+    : <Text as="b" fontSize={"20px"} color="red.300">Please Login </Text>
+  }
+</Box>
 
 </Box>
     </Box>
