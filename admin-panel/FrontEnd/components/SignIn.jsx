@@ -31,20 +31,21 @@ import Link from 'next/link';
       console.log(result);
      let id= result?.data?.admin[0]._id
     if(result.data.msg=="login successfull"){
-    
+      await axios.patch(`http://localhost:4500/admin/update/${id}`,{
+        status:true
+      })
       toast({
         title: result.data.msg,
         status: 'success',
         duration: 4000,
         isClosable: true,
       })
+  
       
       localStorage.setItem("userName",result.data.admin[0].firstName)
       localStorage.setItem("id",id)
       setName(localStorage.getItem("userName"))
-      await axios.patch(`http://localhost:4500/admin/update/:${id}`,{
-        status:true
-      })
+     
      
     }
     else if(result.data=="please enter correct password"){

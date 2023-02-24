@@ -16,7 +16,7 @@ const Sidebar = () => {
   const handleLogout=async()=>{
     let id= localStorage.getItem("id")
 
-    let res= await axios.patch(`http://localhost:4500/admin/update/:${id}`,{
+    let res= await axios.patch(`http://localhost:4500/admin/update/${id}`,{
       status:false
     })
     console.log(res)
