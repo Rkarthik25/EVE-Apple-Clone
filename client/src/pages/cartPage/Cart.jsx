@@ -65,9 +65,9 @@ const Cart = () => {
               <div className="cart-product_header">
                 <h1 className="bag-header">Your bag total is ₹176800.00</h1>
                 <div className="bag-checkout">
-                  <div className="checkout-main">
-                    <div className="checkout-container">
-                      <button className="checkout-btn">Check Out</button>
+                  <div className="bagcheckout-main">
+                    <div className="bagcheckout-container">
+                      <button className="bagcheckout-btn">Check Out</button>
                     </div>
                   </div>
                 </div>
