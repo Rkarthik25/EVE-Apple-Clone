@@ -16,7 +16,7 @@ const Sidebar = () => {
   const handleLogout=async()=>{
     let id= localStorage.getItem("id")
 
-    let res= await axios.patch(`http://localhost:4500/admin/update/:${id}`,{
+    let res= await axios.patch(`http://localhost:4500/admin/update/${id}`,{
       status:false
     })
     console.log(res)
@@ -30,7 +30,7 @@ const Sidebar = () => {
     <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <FiUsers style={{marginTop:"10px"}}/><Button bg="none" _hover="none"> Users</Button></Box>
     <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <MdAdminPanelSettings style={{marginTop:"10px"}}/><Link href="/admins"><Button bg="none" _hover="none"> Admins</Button></Link></Box>
      <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <SlHandbag style={{marginTop:"10px"}}/><Button bg="none" _hover="none"> Orders</Button></Box> 
-     <Box display={"flex"} bg="grey"   _hover={{ bg: "blue.200" }}> <MdInventory style={{marginTop:"10px"}}/><Button bg="none" _hover="none">Inventory</Button></Box>
+     <Box display={"flex"} bg="grey"   _hover={{ bg: "blue.200" }}> <MdInventory style={{marginTop:"10px"}}/><Link href="/inventory"><Button bg="none" _hover="none">Inventory</Button></Link></Box>
      <Box display={"flex"} bg="grey"   _hover={{ bg: "blue.200" }}> <MdInventory style={{marginTop:"10px"}}/><Button onClick={()=>setLogout(!showLogout)} bg="none" _hover="none">Profile</Button>
      
      </Box>

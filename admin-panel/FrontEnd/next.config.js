@@ -1,6 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+// const nextConfig = {
+// //  reactStrictMode: true,
+//   images:{
+//     remotePatterns:[
+//       {
+//         protocol:"https",
+//         hostname:"cdn.fcglcdn.com",
+//         port:"",
+//         pathname:"**"
+//       }
+//     ]
+//   }
+// }
 
-module.exports = nextConfig
+// module.exports = nextConfig
+
+module.exports = {
+  images: {
+    domains: ['cdn.fcglcdn.com'],
+  },
+}
