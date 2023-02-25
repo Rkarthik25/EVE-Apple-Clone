@@ -1,9 +1,13 @@
 import Head from 'next/head'
+import StatsHome from 'components/StatsHome'
 
 import Sidebar from 'components/Sidebar'
 import SignIn from "components/SignIn"
 import { Box,Text } from '@chakra-ui/react'
+import { AuthContext } from 'context/authContext';
+import { useContext } from 'react';
 export default function Home() {
+  const {name}= useContext(AuthContext)
   return (
     <>
       <Head>
@@ -12,11 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     <Box >
+     <Box display={"flex"}>
 <Sidebar />
 
-<SignIn/>
 
+{name?.length ? <StatsHome/> : <SignIn/> }
 
      </Box>
     </>
