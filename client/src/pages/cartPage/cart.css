@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.cart {
+  width: 100%;
+}
+
+.cart-container {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+}
+
+.cart-ribbon {
+  padding: 16px 0px;
+  background-color: #f5f5f7;
+}
+
+.ribbon-content {
+  margin: 0px 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.42859;
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.ribbon-header {
+  margin: auto;
+  width: 1080px;
+  text-align: center;
+}
+
+.ribbon-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #0071e3;
+  cursor: pointer;
+}
+
+.ribbon-btn:hover {
+  text-decoration: underline;
+}
+
+.cart-bag {
+  margin: 0px 300px;
+  padding-top: 50px;
+  margin-bottom: 100px;
+  border: 1px solid black;
+}
+
+.cart-bag_empty {
+  max-width: 75%;
+  text-align: left;
+  border: 1px solid red;
+}
+
+.empty-header {
+  padding-bottom: 2px;
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0;
+  font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+}
+
+.empty-message{
+    margin-top: 0.8em;
+}
+
+.empty-actions{
+    margin-top: 32px;
+}
+
+.actions-div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.action-button{
+    margin-right: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.action-link1{
+    min-width: 28px;
+    padding: 18px 31px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    border-radius: 12px;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    background: #0071e3;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Breakpoints */
+@media only screen and (min-width: 735px) {
+  .cart-bag {
+    width: 57.64706rem;
+  }
+}
