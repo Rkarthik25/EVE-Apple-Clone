@@ -149,7 +149,7 @@ body {
   text-align: center;
 }
 
-.checkout-main {
+.bagcheckout-main {
   max-width: 100%;
   display: flex;
   justify-content: center;
@@ -159,13 +159,13 @@ body {
   text-align: center;
 }
 
-.checkout-container {
+.bagcheckout-container {
   width: 290px;
   margin-top: 31px;
   float: right;
 }
 
-.checkout-btn {
+.bagcheckout-btn {
   width: 100%;
   min-width: 28px;
   padding: 8px 16px;
