@@ -1,6 +1,9 @@
 const express=require("express")
-const { connection } = require("./config/db")
+const { connection } = require("./configs/db")
 const { adminRouter } = require("./routes/admin.routes")
+const { cartRouter } = require('./routes/cart.route');
+const { userRouter } = require('./routes/user.route');
+
 const cors= require("cors")
 const app= express()
 app.use(express.json())
@@ -9,6 +12,9 @@ app.use(cors({
 }))
 // if endpoint is "admin" then redirect it to the "adminRouter"
 app.use("/admin",adminRouter)
+
+app.use("/cart",cartRouter);
+app.use('/users',userRouter);
 
 app.listen(process.env.PORT,async()=>{
 try{
