@@ -10,7 +10,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [show, setShow] = React.useState(false);
+ // const [show, setShow] = React.useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
