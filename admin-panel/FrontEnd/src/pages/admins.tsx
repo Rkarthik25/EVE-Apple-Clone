@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import SingleRow from "../../components/SingleRow"
 import Sidebar from 'components/Sidebar'
+import SignIn from 'components/SignIn'
 import {
     Table,
     Thead,
@@ -14,18 +15,11 @@ import {
     TableCaption,
     TableContainer,
   } from '@chakra-ui/react'
-interface obj{
-    _id:string,
-    email:string,
-    mobile:number,
-    GST_no:string,
-    password:string,
-    firstName:string,
-}
+  import { AuthContext } from 'context/authContext';
+  import { useContext } from 'react';
 const Admins = () => {
     const [admins,setAdmins]= React.useState<obj[]>([]);
-
-
+    const {name}= useContext(AuthContext)
     const getAdmins=async ()=>{
       let admins=await  axios.get("http://localhost:4500/admin")
      setAdmins(admins.data)
@@ -38,6 +32,8 @@ getAdmins()
   return (
     <Box display={"flex"}>
 <Sidebar />
+{
+!name?.length? <SignIn/>:
   <Box>
 <Table>
     <Thead>
@@ -56,6 +52,7 @@ getAdmins()
     </Tbody>
 </Table>
 </Box>
+}
 </Box>
   )
 }

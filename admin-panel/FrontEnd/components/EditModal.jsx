@@ -1,62 +1,60 @@
-import {
-  useDisclosure,
-  Modal,
- Input,
- Text,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  Image,
 
-  ModalCloseButton,
-  Box,Button,FormControl,FormLabel, AspectRatio
-} from '@chakra-ui/react';
-import {BiEdit} from "react-icons/bi"
-
-
+import axios from 'axios';
 import React from 'react';
-
-function Edit_Modal() {
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
+import { Box,Input ,Button,useToast} from '@chakra-ui/react';
 
 
-  
+function Edit_Modal({data,closeModal}) {
+const toast= useToast()
   
 
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
+const [form,setForm]= React.useState({
+img1:data.img1,
+title:data.title,
+PriceToAccess:data.PriceToAccess,
+ProductDescription:data.ProductDescription,
+Stock:data.Stock
+
+})
+
+const handleChange=(e)=>{
+setForm({...form,[e.target.name]:e.target.value})
+}
+console.log(form)
+const handleUpdate=async()=>{
+await axios.patch(`http://localhost:4500/product/update/${data._id}`,form).then(res=>{
+  toast({
+    title: "Product has been updated",
+    status: 'success',
+    duration: 4000,
+    isClosable: true,
+  })
+}).catch(err=>{
+  toast({
+    title: "Product can not updated",
+    status: 'error',
+    duration: 4000,
+    isClosable: true,
+  })
+})
+}
 
 
   return (
     <>
         
-   <BiEdit onClick={onOpen}/>
-      <Modal  size={"2xl"} 
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
-        isOpen={isOpen}
-        onClose={onClose}
-      >
-        <ModalOverlay />
-        <ModalContent  border={"2px solid white"}>
-        <div style={{border:"3px solid white"}}>
-          <ModalHeader fontSize={"30px"} fontWeight="700" textAlign={"center"}>Enter the fields you want to edit</ModalHeader></div>
-          <ModalCloseButton />
-          <ModalBody display={"grid"} >
+ 
+      <Box  width={"100%"} position={"fixed"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"} bg="blackAlpha.400" top="0" left="0" onClick={closeModal}> 
     
-     <Input placeholder='new image link' />
-     <Input  placeholder='new Title' />
-      <Input  placeholder="new price" />
-      <Input  placeholder='new Description' />
-      <Input  placeholder='new Stock'/>
-      <Button bg='teal.200' >Submit</Button>
-</ModalBody>
-        
-        </ModalContent>
-      </Modal>
+    <Box  w="40%" bg="teal.100" p="10" onClick={(e)=>e.stopPropagation()}>
+     <Input placeholder='new image link' name="img1" value={form.img1} onChange={handleChange} />
+     <Input  placeholder='new Title'  name="title" value={form.title} onChange={handleChange}/>
+      <Input  placeholder="new price" name="PriceToAccess" value={form.PriceToAccess} onChange={handleChange} />
+      <Input  placeholder='new Description' name="ProductDescription" value={form.ProductDescription} onChange={handleChange}/>
+      <Input  placeholder='new Stock' name="Stock" value={form.Stock} onChange={handleChange}/>
+      <Button bg='teal.200'  onClick={()=>handleUpdate()}>Submit</Button>
+      </Box>
+      </Box>
     </>
   )
 }

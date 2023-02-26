@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-
+import ProductNav from 'components/ProductNav'
 import {
     Table,
     Thead,
@@ -13,18 +13,27 @@ import {
     TableContainer,
   } from '@chakra-ui/react'
 import ProductRow from 'components/ProductRow'
+import { AuthContext } from 'context/authContext';
+import { useContext } from 'react';
+import SignIn from 'components/SignIn'
 const inventory = () => {
     const [products,setProducts]= React.useState([])
+    const {name}= useContext(AuthContext)
     const getProducts=async()=>{
-let data= await axios.get("https://troubled-organized-denim.glitch.me/toys")
+let data= await axios.get("http://localhost:4500/product")
+console.log(data)
 setProducts(data.data)
     }
 console.log(products)
     React.useEffect(()=>{
 getProducts()
     },[])
-  return (
-    <div>
+
+    const handleData = (products) => {
+        setProducts(products);
+      };
+  return !name?.length?  <SignIn/>: <div>
+        <ProductNav onData={handleData} />
 <Table  variant='striped' colorScheme='teal'>
     <Thead>
         <Tr>
@@ -33,6 +42,9 @@ getProducts()
         </Th>
         <Th>
             Image
+        </Th>
+        <Th>
+            Category
         </Th>
         <Th> 
        Price
@@ -50,13 +62,15 @@ getProducts()
     </Thead>
     <Tbody>
         {
-            products?.map(el=><ProductRow {...el}/>)
+            products?.map(el=><ProductRow el={el} key={el._id}/>)
         }
     </Tbody>
 </Table>
 
     </div>
-  )
+    
 }
+  
+
 
 export default inventory
