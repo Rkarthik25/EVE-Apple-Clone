@@ -83,7 +83,7 @@ const Cart = () => {
                       />
                     </div>
                     <div className="iteminfo-contentcol">
-                      <div className="iteninfo-details">
+                      <div className="iteminfo-details">
                         <div className="iteminfo-title">
                           <h2 className="title-content">
                             AirPods Pro (2nd generation)
