@@ -11,7 +11,7 @@ const initialState = {
 
 export const reducer = (state= initialState, action) => {
  
-    const {type, payload} = action
+    const {type, payload} = action;
 
 switch(type){
     case Types.LOGIN_REQUEST: 
@@ -21,6 +21,7 @@ switch(type){
        isError: false,
     }
     case Types.LOGIN_SUCCESS: 
+    console.log(payload)
     return {
        ...state, 
        isAuth: true,

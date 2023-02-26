@@ -6,6 +6,7 @@ export const loginRequest = ()=>{
     }
 }
 export const loginSuccess = (payload)=>{
+    console.log(payload, "reducer")
     return {
         type: Types.LOGIN_SUCCESS,
         payload: payload
@@ -75,12 +76,12 @@ export const Signup = ({Fname,
     console.log(data);
     try {
       dispatch(loginRequest());
-  return    await axios
+      await axios
         .post("http://localhost:4500/users/login", data)
         .then((res) => {
-            console.log(res); 
+            console.log(res.data.usertoken); 
             localStorage.setItem("userID", res.data.data.id)
-          return  dispatch(loginSuccess(res.data))
+           loginSuccess(res.data.usertoken)
         });
     } catch (e) {
       dispatch(loginFailure(e.message));
