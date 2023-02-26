@@ -230,7 +230,7 @@ body {
   cursor: pointer;
 }
 
-.iteninfo-details {
+.iteminfo-details {
   display: flex;
   flex-wrap: wrap;
 }

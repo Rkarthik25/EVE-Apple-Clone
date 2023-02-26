@@ -1,0 +1,45 @@
+body {
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  background-color: #fff;
+  color: #1d1d1f;
+  font-style: normal;
+}
+
+.payment {
+  min-height: 350px;
+}
+
+.payment-optionContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+.payment-headerContainer {
+  margin: 65px 0 40px;
+  text-align: left;
+}
+
+.payment-headerTitle {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.payment-options {
+  border-bottom: 1px solid #d2d2d7;
+}
+
+
+
+@media only screen and (min-width: 735px) {
+  .payment-options {
+    width: 57.64706rem;
+  }
+}
