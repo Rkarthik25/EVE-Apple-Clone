@@ -1,0 +1,23 @@
+#footer_last {
+  width: 75%;
+  margin: auto;
+  font-size: medium;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+#footer_last h6:hover {
+  cursor: pointer;
+  color: rgb(0, 186, 254);
+}
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  #footer_last {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  #footer_last {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
