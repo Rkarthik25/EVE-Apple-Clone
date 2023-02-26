@@ -1,6 +1,6 @@
 const express=require("express")
 const { connection } = require("./configs/db")
-const { adminRouter } = require("./routes/admin.route")
+const { adminRouter } = require("./routes/admin.routes")
 const {productRouter} =  require("./routes/product.route")
 const cors= require("cors")
 const { userRouter } = require("./routes/user.route")
