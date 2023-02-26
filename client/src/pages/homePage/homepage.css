@@ -1,0 +1,46 @@
+#home_carousal_images {
+  margin-top: 15%;
+}
+#home_carousal_images img {
+  width: 100%;
+}
+#mid_body_divs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1%;
+  width: 96%;
+  margin: auto;
+}
+#mid_body_divs img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+#mid_body_divs div {
+  padding: 3%;
+  width: 95%;
+  grid-template-columns: repeat(1, 1fr);
+}
+#mid_body_divs a {
+  width: 10%;
+  margin-left: 7%;
+  margin-right: -2%;
+  color: blue;
+  text-decoration: none;
+}
+#home_start {
+  padding-top: 0.5%;
+  background-color: black;
+  color: white;
+}
+#homepage_container button {
+  border: none;
+  color: blue;
+  background-color: transparent;
+}
+#homepage_container {
+  text-align: center;
+}
+#iphone_img {
+  width: 80%;
+}
