@@ -78,8 +78,8 @@ export const Signup = ({Fname,
   return    await axios
         .post("http://localhost:4500/users/login", data)
         .then((res) => {
-            console.log(res); 
-            localStorage.setItem("userID", res.data.data.id)
+            console.log(res.data.id); 
+            localStorage.setItem("userID", res.data.id)
           return  dispatch(loginSuccess(res.data))
         });
     } catch (e) {
