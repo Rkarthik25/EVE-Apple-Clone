@@ -1,7 +1,11 @@
 const express=require("express")
-const { connection } = require("./config/db")
+const { connection } = require("./configs/db")
 const { adminRouter } = require("./routes/admin.routes")
+
 const {productRouter}=require("./routes/ProductRoute")
+const { cartRouter } = require('./routes/cart.route');
+const { userRouter } = require('./routes/user.route');
+
 const cors= require("cors")
 const app= express()
 app.use(express.json())
@@ -12,6 +16,10 @@ app.use(cors({
 app.use("/admin",adminRouter)
 app.use("/product",productRouter)
 app.use("/:category",productRouter)
+
+app.use("/cart",cartRouter);
+app.use('/users',userRouter);
+
 app.listen(process.env.PORT,async()=>{
 try{
 await connection
