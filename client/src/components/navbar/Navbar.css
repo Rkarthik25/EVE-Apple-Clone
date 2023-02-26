@@ -1,0 +1,84 @@
+#Navbar_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(53, 50, 50);
+  color: white;
+  margin-bottom: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+#Navbar_container > div {
+  background-color: rgb(53, 50, 50);
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#Navbar_container img {
+  width: 12%;
+}
+
+#Navbar_container p {
+  background-color: rgb(53, 50, 50);
+}
+.ant-dropdown {
+  background-color: rgb(53, 50, 50);
+}
+#Navbar_container p {
+  font-size: x-small;
+}
+#Navbar_container p:hover {
+  color: rgb(0, 186, 254);
+  cursor: pointer;
+}
+.font-link {
+  font-family: "Roboto", sans-serif;
+}
+#storemenu_subs div {
+  background-color: rgb(53, 50, 50);
+}
+#storemenu_subs h3:hover {
+  cursor: pointer;
+  color: rgb(0, 186, 254);
+}
+#storemenu_subs p {
+  background-color: rgb(53, 50, 50);
+  font-size: xx-small;
+  color: grey;
+}
+#storemenu_subs h3,
+h5 {
+  background-color: rgb(53, 50, 50);
+}
+#storemenu_subs {
+  background-color: rgb(53, 50, 50);
+  padding-left: 5%;
+}
+@media screen and (max-width: 900px) {
+  #Navbar_container p {
+    display: none;
+  }
+}
+@media screen and (min-width: 900px) {
+  #drawer {
+    display: none;
+  }
+}
+
+.main_drawer > * {
+  background-color: rgb(53, 50, 50);
+  color: white;
+}
+.main_drawer h2:hover {
+  color: rgb(0, 186, 254);
+}
+#drawer {
+  background-color: rgb(53, 50, 50);
+}
+#drawer img {
+  width: 5%;
+}
