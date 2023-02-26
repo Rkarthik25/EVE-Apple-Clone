@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./cart.css";
 import { BiChevronRight } from "react-icons/bi";
 import { IoAddSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { useSelector } from "react-redux/es/exports";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Accordion,
   AccordionItem,
@@ -13,9 +12,22 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+import axios from "axios";
 
 const Cart = () => {
-  const cart = useSelector((store) => store.appReducer);
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+
+  const getProduct = async () => {
+    const id = localStorage.getItem("userID");
+    console.log(id);
+    let product = await axios.get(`http://localhost:4500/cart/${id}`);
+    setData(product.data);
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
 
   return (
     <div className="cart">
@@ -38,7 +50,7 @@ const Cart = () => {
         </div>
 
         <div className="cart-bag">
-          {cart.cartItems.length === 0 ? (
+          {data.length === 0 ? (
             <div className="cart-bag_empty">
               <h1 className="empty-header">Your bag is empty.</h1>
               <div className="empty-message">
@@ -63,56 +75,64 @@ const Cart = () => {
           ) : (
             <div>
               <div className="cart-product_header">
-                <h1 className="bag-header">Your bag total is ₹176800.00</h1>
+                <h1 className="bag-header">
+                  `Your bag total is ₹${data.price}`
+                </h1>
                 <div className="bag-checkout">
                   <div className="bagcheckout-main">
                     <div className="bagcheckout-container">
-                      <button className="bagcheckout-btn">Check Out</button>
+                      <button
+                        className="bagcheckout-btn"
+                        onClick={() => {
+                          navigate("/checkout");
+                        }}>
+                        Check Out
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <ol className="cart-items">
-                <li className="cart-item_Info">
-                  <div className="iteminfo-row">
-                    <div className="iteminfo-imagecol">
-                      <img
-                        src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQD83?"
-                        alt="product"
-                        className="item-img"
-                      />
-                    </div>
-                    <div className="iteminfo-contentcol">
-                      <div className="iteninfo-details">
-                        <div className="iteminfo-title">
-                          <h2 className="title-content">
-                            AirPods Pro (2nd generation)
-                          </h2>
-                        </div>
-                        <div className="iteminfo-quantity">
-                          <div className="quantity-contain">
-                            <select name="Quantity" id="quantity">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                            </select>
+              {data?.map((el) => (
+                <ol className="cart-items">
+                  <li className="cart-item_Info">
+                    <div className="iteminfo-row">
+                      <div className="iteminfo-imagecol">
+                        <img
+                          src={el.image}
+                          alt="product"
+                          className="item-img"
+                        />
+                      </div>
+                      <div className="iteminfo-contentcol">
+                        <div className="iteminfo-details">
+                          <div className="iteminfo-title">
+                            <h2 className="title-content">{el.title}</h2>
                           </div>
-                        </div>
-                        <div className="iteminfo-pricedetails">
-                          <div className="price-info">
-                            <p>₹26900.00</p>
+                          <div className="iteminfo-quantity">
+                            <div className="quantity-contain">
+                              <select name="Quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                              </select>
+                            </div>
                           </div>
-                        </div>
-                        <div className="iteminfo-remove">
-                          <button className="remove-btn">Remove</button>
+                          <div className="iteminfo-pricedetails">
+                            <div className="price-info">
+                              <p>`₹${el.price}`</p>
+                            </div>
+                          </div>
+                          <div className="iteminfo-remove">
+                            <button className="remove-btn">Remove</button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              </ol>
+                  </li>
+                </ol>
+              ))}
               <div className="cart-summary">
                 <div className="summary-container">
                   <div className="summary-subtotal">
@@ -136,7 +156,13 @@ const Cart = () => {
               <div className="cart-checkout">
                 <div className="cart-checkoutmain">
                   <div className="cart-checkoutbtn">
-                    <button className="cart-checkoutbutton">Check Out</button>
+                    <button
+                      className="cart-checkoutbutton"
+                      onClick={() => {
+                        navigate("/checkout");
+                      }}>
+                      Check Out
+                    </button>
                   </div>
                 </div>
               </div>

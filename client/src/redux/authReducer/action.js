@@ -1,4 +1,3 @@
-
 import * as Types from "./actionTypes";
 import axios from "axios";
 export const loginRequest = ()=>{
@@ -80,9 +79,9 @@ export const Signup = ({Fname,
       await axios
         .post("http://localhost:4500/users/login", data)
         .then((res) => {
-            console.log(res.data.usertoken); 
-            localStorage.setItem("userID", res.data.data.id)
-           loginSuccess(res.data.usertoken)
+            console.log(res.data.id); 
+            localStorage.setItem("userID", res.data.id)
+          return  dispatch(loginSuccess(res.data))
         });
     } catch (e) {
       dispatch(loginFailure(e.message));
