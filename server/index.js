@@ -3,6 +3,7 @@ const { connection } = require("./configs/db");
 const { adminRouter } = require("./routes/admin.routes");
 const { cartRouter } = require("./routes/cart.route");
 const { userRouter } = require("./routes/user.route");
+const { productRouter } = require("./routes/ProductRoute");
 
 const cors = require("cors");
 const app = express();
@@ -17,6 +18,7 @@ app.use("/admin", adminRouter);
 
 app.use("/cart", cartRouter);
 app.use("/users", userRouter);
+app.use("/products",productRouter)
 
 app.listen(process.env.PORT, async () => {
   try {

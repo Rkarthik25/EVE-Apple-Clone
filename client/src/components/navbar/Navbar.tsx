@@ -16,6 +16,7 @@ import { Dropdown } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { SearchOutlined } from "@ant-design/icons";
 import Storemenu from "./components/Storemenu";
+import { useNavigate } from "react-router-dom";
 const Final_logo = require("./images/Final_logo .jpg");
 const hamburger = require("./images/hamburger.png");
 
@@ -31,6 +32,7 @@ function Navbar() {
   const [Entertainment, setEntertain] = useState(false);
   const [Accessories, setAccessories] = useState(false);
   const [support, setSupport] = useState(false);
+  const navigate=useNavigate()
 
   const handlestore = (open: boolean) => {
     setStore(open);
@@ -84,7 +86,7 @@ function Navbar() {
     <>
       <div id="Navbar_container">
         <div>
-          <img src={Final_logo} alt="error" />
+          <img src={Final_logo} alt="error" onClick={()=>navigate("/")} />
           <Dropdown
             overlay={<Storemenu />}
             visible={store}
@@ -170,6 +172,7 @@ function Navbar() {
           />
           <ShoppingCartOutlined
             style={{ marginTop: "1%", backgroundColor: "rgb(53, 50, 50)" }}
+            onClick={()=>navigate("/cart")}
           />
         </div>
       </div>

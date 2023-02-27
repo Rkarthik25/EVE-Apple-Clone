@@ -1,3 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  background-color: #fff;
+  color: #1d1d1f;
+  font-style: normal;
+}
+
 .payment {
   min-height: 350px;
 }
