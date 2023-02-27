@@ -42,5 +42,12 @@ This is a collaborative team project of five members to make a responsive E-comm
 1. Karthikeyan - Product Page & Single Product Page
 2. Sama Sarun - HomePage, Navbar, Footer & Iphone 14 pro (UI)
 3. Prabal - Admin Page (UI including backend operations)
-4. Monojit - Cart Page, Checkout Page, Payment Page
+4. Monojit - Cart Page, Checkout Page, Payment Page!
 5. Aditya - Login & Register Page (UI including backend operation)
+## Pages
+
+ [Screenshot_20230227_122222](https://user-images.githu![Screenshot_20230227_122603](https://user-images.githubusercontent.com/108731705/221495757-bff20124-b655-4afe-92a9-4cbd5115d2f6.png)
+busercontent.com/108731705/221495485-d29f7d1c-c49b-4a2c-a059-621ccc917be7.png)
+ 
+ 
+
