@@ -24,7 +24,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4500/products/${category}`)
+      .get(`https://friendly-fawn-pocketbook.cyclic.app/products/${category}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, [category]);

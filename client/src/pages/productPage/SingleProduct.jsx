@@ -5,11 +5,7 @@ import {
   Box,
   Heading,
   Text,
-  SimpleGrid,
-  Stack,
   Flex,
-  UnorderedList,
-  ListItem,
 } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
@@ -20,7 +16,7 @@ const SingleProduct = () => {
   const [singledata, setSingledata] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:4500/products/id/${params.id}`)
+      .get(`https://friendly-fawn-pocketbook.cyclic.app/products/id/${params.id}`)
       .then((res) => setSingledata(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -29,7 +25,7 @@ const SingleProduct = () => {
     const id = localStorage.getItem('userID')
     console.log(id)
     axios
-      .post(`http://localhost:4500/cart/${id}`, {
+      .post(`https://friendly-fawn-pocketbook.cyclic.app/cart/${id}`, {
         _id: params.id,
         title: singledata?.[0]?.title,
         img1: singledata?.[0]?.img1,

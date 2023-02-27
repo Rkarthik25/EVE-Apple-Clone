@@ -22,7 +22,7 @@ const Cart = () => {
   const getProduct = async () => {
     const id = localStorage.getItem("userID");
     console.log(id);
-    let product = await axios.get(`http://localhost:4500/cart/${id}`);
+    let product = await axios.get(`https://friendly-fawn-pocketbook.cyclic.app/cart/${id}`);
     setData(product.data);
   };
 
