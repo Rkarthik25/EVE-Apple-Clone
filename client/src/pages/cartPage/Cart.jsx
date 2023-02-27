@@ -15,7 +15,7 @@ import {
 import axios from "axios";
 
 const Cart = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [cartTotal, setCartTotal] = useState(0);
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const Cart = () => {
 
   const getTotal = () => {
     let total;
-    if (data?.length !== 0) {
+    if (data) {
       total = data.reduce(function (ac, el) {
         console.log(el)
         return ac + el.PriceToAccess * el.quant;
@@ -68,7 +68,7 @@ const Cart = () => {
         </div>
 
         <div className="cart-bag">
-          {data.length === 0 ? (
+          {!data ? (
             <div className="cart-bag_empty">
               <h1 className="empty-header">Your bag is empty.</h1>
               <div className="empty-message">
