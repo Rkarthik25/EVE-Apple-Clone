@@ -3,6 +3,7 @@ import { Box,Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import { AuthContext } from 'context/authContext';
 import { useContext } from 'react';
+import { useRouter } from 'next/router';
 import logo from "../assets/logo.jpg"
 const Navbar = () => {
 
@@ -11,11 +12,12 @@ const Navbar = () => {
         // Perform localStorage action
          setName(localStorage.getItem("userName")) 
       }
+      const router=useRouter()
    
   return (
     <Box display={"flex"} justifyContent={"space-between"}> 
-<Box>
-<Image src={logo} alt="..." borderRadius="100" width={150} height={150}/>
+<Box cursor={"pointer"} onClick={()=>router.push("/")}>
+ <Image  src={logo} alt="..." borderRadius="100" width={150} height={150}/>
 </Box>
 <Box display={"flex"} justifyContent={"space-between"} w="10%">
 <Box>

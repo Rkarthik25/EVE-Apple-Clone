@@ -11,7 +11,7 @@ import { useContext } from 'react';
 import axios from 'axios'
 const Sidebar = () => {
   const [showLogout, setLogout]= React.useState(false)
-  const {name,setName}= useContext(AuthContext)
+  const {setName}= useContext(AuthContext)
 
   const handleLogout=async()=>{
     let id= localStorage.getItem("id")
@@ -26,8 +26,8 @@ const Sidebar = () => {
   }
   return (
     <Box display={"grid"} w="20%" justifyContent={"left"}>
-    <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <AiTwotoneHome style={{marginTop:"10px"}}/><Button bg="none" _hover="none"> Home</Button></Box>
-    <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <FiUsers style={{marginTop:"10px"}}/><Button bg="none" _hover="none"> Users</Button></Box>
+    <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <AiTwotoneHome style={{marginTop:"10px"}}/><Link href="/"><Button bg="none" _hover="none"> Home</Button></Link></Box>
+    <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <FiUsers style={{marginTop:"10px"}}/><Link href={"/users"}><Button bg="none" _hover="none"> Users</Button></Link></Box>
     <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <MdAdminPanelSettings style={{marginTop:"10px"}}/><Link href="/admins"><Button bg="none" _hover="none"> Admins</Button></Link></Box>
      <Box display={"flex"} bg="grey" _hover={{ bg: "blue.200" }}> <SlHandbag style={{marginTop:"10px"}}/><Button bg="none" _hover="none"> Orders</Button></Box> 
      <Box display={"flex"} bg="grey"   _hover={{ bg: "blue.200" }}> <MdInventory style={{marginTop:"10px"}}/><Link href="/inventory"><Button bg="none" _hover="none">Inventory</Button></Link></Box>

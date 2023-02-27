@@ -1,26 +1,51 @@
 import React from 'react'
-import {Tr, Td} from "@chakra-ui/react"
+import {Tr, Td, Button,useDisclosure} from "@chakra-ui/react"
 import Image from 'next/image'
-
+import {BiEdit} from "react-icons/bi"
 import Edit_Modal from './EditModal.jsx'
-const ProductRow = ({title, price, img, L11_42}) => {
-  console.log(title)
+
+const ProductRow = (props) => {
+  const [data,setData]= React.useState({})
+  const [modal,setModal]= React.useState(false)
+ const {el}= props
+  const handleEdit=(el)=>{
+setData(el)
+setModal(true)
+  }
+
+  const closeModal=()=>{
+    setModal(false)
+  }
   return (
+    <>
     <Tr>
-      <Td>{title}</Td>
+      <Td>{el.title}</Td>
       <Td>
-        <img src={img} style={{width:"20%"}}  alt="product image" />
+        <img src={el.img1} style={{width:"10%"}}  alt="product image" />
       </Td>
-      <Td>{price}</Td>
       <Td>
-     
+        {el.Category}
+      </Td>
+      <Td>₹{el.PriceToAccess}</Td>
+    
+      <Td>
+     {el.Stock}
       </Td>
       <Td>
       
-        <Edit_Modal />
+       
+        <BiEdit onClick={()=>handleEdit(el)}/>
+
       </Td>
-      <Td>{L11_42}</Td>
+      {
+        el.ProductDescription&&
+  <Td>{`${el?.ProductDescription[0]},${el?.ProductDescription[1]}, ${el?.ProductDescription[2]}`}</Td>
+}
+
     </Tr>
+    { modal&&<Edit_Modal data={data} closeModal={closeModal} /> 
+  }
+</>
   )
 }
 

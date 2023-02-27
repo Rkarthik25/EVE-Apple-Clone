@@ -29,7 +29,7 @@ import Link from 'next/link';
         email,password
       })
       console.log(result);
-     let id= result?.data?.admin[0]._id
+     let id= result?.data?.admin[0]?._id
     if(result.data.msg=="login successfull"){
       await axios.patch(`http://localhost:4500/admin/update/${id}`,{
         status:true
