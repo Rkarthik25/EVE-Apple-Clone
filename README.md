@@ -47,7 +47,8 @@ This is a collaborative team project of five members to make a responsive E-comm
 ## Pages
 
  <img src="https://user-images.githubusercontent.com/108731705/221495757-bff20124-b655-4afe-92a9-4cbd5115d2f6.png"/>
- <img src="https://user-images.gitbusercontent.com/108731705/221495485-d29f7d1c-c49b-4a2c-a059-621ccc917be7.png"/>
+
  
  
+<img src="https://user-images.githubusercontent.com/108731705/221496279-d4b1bb89-8121-42b6-865d-65ee3710f774.png"/>
 
