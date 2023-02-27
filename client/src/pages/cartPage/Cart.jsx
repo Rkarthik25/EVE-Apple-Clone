@@ -28,7 +28,7 @@ const Cart = () => {
 
   const getTotal = () => {
     let total;
-    if (data.length !== 0) {
+    if (data?.length !== 0) {
       total = data.reduce(function (ac, el) {
         console.log(el)
         return ac + el.PriceToAccess * el.quant;
