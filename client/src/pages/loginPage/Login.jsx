@@ -94,6 +94,11 @@ export const Login = () => {
         <Button onClick={handleClick} mt="14px" mb="4px">
           Signin
         </Button>
+        <Link href="https://admin-panel-eve.vercel.app/" target="_blank">
+          <Button mt="14px" mb="4px">
+            Sign In as ADMIN
+          </Button>
+        </Link>
         <hr style={{ margin: "20px 0px 20px 0px", width: "100%" }} />
 
         <Text>

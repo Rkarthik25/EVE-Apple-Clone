@@ -1,29 +1,36 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  Box,
-  Heading,
-  Text,
-  Flex,
-} from "@chakra-ui/layout";
-import { Image } from "@chakra-ui/react";
+import { Box, Heading, Text, Flex } from "@chakra-ui/layout";
+import { Image, Toast, useToast } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 
 const SingleProduct = () => {
   const params = useParams();
+  const Toast = useToast();
 
   const [singledata, setSingledata] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://friendly-fawn-pocketbook.cyclic.app/products/id/${params.id}`)
+      .get(
+        `https://friendly-fawn-pocketbook.cyclic.app/product/id/${params.id}`
+      )
       .then((res) => setSingledata(res.data))
       .catch((err) => console.log(err));
   }, []);
-  
+
   const AddtoCart = () => {
-    const id = localStorage.getItem('userID')
-    console.log(id)
+    Toast({
+      position: "top",
+      render: () => (
+        <Box color="white" p={3} bg="#0071E3">
+          Product Added Succesfully
+        </Box>
+      ),
+      isClosable: true,
+    });
+    const id = localStorage.getItem("userID");
+    console.log(id);
     axios
       .post(`https://friendly-fawn-pocketbook.cyclic.app/cart/${id}`, {
         _id: params.id,
@@ -112,7 +119,7 @@ const SingleProduct = () => {
             </div>
           ))}
           <Button
-            onClick={()=>AddtoCart()}
+            onClick={() => AddtoCart()}
             backgroundColor="blue.400"
             p="5% 15% 5% 15%">
             Add To Bag

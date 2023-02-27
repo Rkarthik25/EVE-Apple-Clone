@@ -14,9 +14,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { Signup as register } from "../../redux/authReducer/action";
 
-export const Signup = () => {
+const Register = () => {
   const [Fname, setFName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -48,9 +47,7 @@ export const Signup = () => {
 
     if (Fname && phone && email) {
       if (password.length > 8) {
-        dispatch(
-          register({ Fname, phone, email, password, Lname, Dob, country })
-        );
+        // register({ Fname, phone, email, password, Lname, Dob, country });
         // if (signupSuccess !== "") {
         toast({
           description: "Your EVE ID Create",
@@ -180,3 +177,5 @@ export const Signup = () => {
     </FormControl>
   </Box>;
 };
+
+export default Register;
