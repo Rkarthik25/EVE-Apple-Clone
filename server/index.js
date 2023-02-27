@@ -1,4 +1,3 @@
-
 const express=require("express")
 const { connection } = require("./configs/db")
 const { adminRouter } = require("./routes/admin.routes")

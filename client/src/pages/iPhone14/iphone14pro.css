@@ -1,6 +1,6 @@
-* {
-  background-color: black;
-}
+#iphone_container >  * {
+  background-color:black
+  }
 #iphone_container h1 {
   width: 50%;
   margin: auto;

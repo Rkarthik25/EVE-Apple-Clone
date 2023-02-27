@@ -17,7 +17,7 @@ function HomeBody() {
     <>
       <div id="homepage_container">
         <div id="home_start">
-          <h1>iPhone 14 Pro</h1>
+          <h1 onClick={()=>navigate("/iphone14pro")}>iPhone 14 Pro</h1>
           <h4>Pro.Beyond.</h4>
           <button
             style={{

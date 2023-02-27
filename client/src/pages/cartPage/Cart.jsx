@@ -16,6 +16,7 @@ import axios from "axios";
 
 const Cart = () => {
   const [data, setData] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
   const navigate = useNavigate();
 
   const getProduct = async () => {
@@ -25,9 +26,26 @@ const Cart = () => {
     setData(product.data);
   };
 
+  const getTotal = () => {
+    let total;
+    if (data.length !== 0) {
+      total = data.reduce(function (ac, el) {
+        console.log(el)
+        return ac + el.PriceToAccess * el.quant;
+      }, 0);
+    }
+    setCartTotal(total);
+  };
+
+  console.log(cartTotal,"abc");
+
   useEffect(() => {
     getProduct();
   }, []);
+
+  useEffect(() => {
+    getTotal();
+  }, [data]);
 
   return (
     <div className="cart">
@@ -75,9 +93,7 @@ const Cart = () => {
           ) : (
             <div>
               <div className="cart-product_header">
-                <h1 className="bag-header">
-                  `Your bag total is ₹${data.price}`
-                </h1>
+                <h1 className="bag-header">Your bag total is ${cartTotal}</h1>
                 <div className="bag-checkout">
                   <div className="bagcheckout-main">
                     <div className="bagcheckout-container">
@@ -97,11 +113,7 @@ const Cart = () => {
                   <li className="cart-item_Info">
                     <div className="iteminfo-row">
                       <div className="iteminfo-imagecol">
-                        <img
-                          src={el.image}
-                          alt="product"
-                          className="item-img"
-                        />
+                        <img src={el.img1} alt="product" className="item-img" />
                       </div>
                       <div className="iteminfo-contentcol">
                         <div className="iteminfo-details">
@@ -121,7 +133,7 @@ const Cart = () => {
                           </div>
                           <div className="iteminfo-pricedetails">
                             <div className="price-info">
-                              <p>`₹${el.price}`</p>
+                              <p>${el.PriceToAccess}</p>
                             </div>
                           </div>
                           <div className="iteminfo-remove">
@@ -138,7 +150,7 @@ const Cart = () => {
                   <div className="summary-subtotal">
                     <div className="summary-main">
                       <div className="summary-label">Subtotal</div>
-                      <div className="summary-value">₹176800.00</div>
+                      <div className="summary-value">${cartTotal}</div>
                     </div>
                   </div>
                   <div className="summary-shipping">
@@ -149,7 +161,7 @@ const Cart = () => {
                   </div>
                   <div className="summary-total">
                     <div className="total-label">TOTAL</div>
-                    <div className="total-value">₹176800.00</div>
+                    <div className="total-value">${cartTotal}</div>
                   </div>
                 </div>
               </div>

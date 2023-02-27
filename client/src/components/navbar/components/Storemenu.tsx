@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function Storemenu() {
+  const navigate=useNavigate()
   return (
     <div
       id="storemenu_subs"
@@ -18,7 +21,7 @@ function Storemenu() {
       >
         <div id="storemenu_subs" style={{ width: "200px" }}>
           <p>Shop</p>
-          <h3>Shop Latest</h3>
+          <h3 onClick={()=> {navigate("/products")}}>Shop Latest</h3>
           <h3>Mac</h3>
           <h3>iPad</h3>
           <h3>iPhone</h3>

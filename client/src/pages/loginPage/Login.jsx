@@ -35,11 +35,11 @@ const getdata = ()=>{
   };
 
   return axios
-  .post("http://localhost:4500/users/login", data)
+  .post("http://localhost:4500/users/user/login", data)
   .then((res) => {
     console.log(res.data)
      console.log(res.data.usertoken)
-      localStorage.setItem("userID", res.data?.data?.id)
+      localStorage.setItem("userID", res.data?.id)
   
       return res.data.usertoken;
   });
@@ -64,6 +64,7 @@ const getdata = ()=>{
                duration: 3000,
               isClosable: true,
             });
+            navigate("/")
   }else{
     toast({
     description: "Wrong Credentials !",
@@ -150,6 +151,26 @@ const getdata = ()=>{
   //     isClosable: true,
   //   });
   // }
+  return (
+    <Box mt="15px" ml="35%" mr="35%" w="30%" >
+      <Box>
+<Heading  >
+Sign in for faster checkout.
+</Heading>
+      </Box >
 
+      <Box mt={"60px"} w="80%" >
+        <Text mt="4px" mb="8px">
+        Sign in to EVE Store
+        </Text>
+        <Input type="text" mt="4px" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="EVE ID" />
+        <Input type = "password" mt="8px" value={password} placeholder="Password" onChange={(e)=> setPassword(e.target.value)} ></Input>
+        <Button onClick={handleClick} mt="14px" mb="4px">Signin</Button>
+    <hr style={{margin: "20px 0px 20px 0px", width:"100%" }} />
+      
+      <Text>Don't have an EVE ID? <span><Link color={"blue.500"} >Create yours now</Link></span></Text>
+      </Box>
 
-export default Login
+    </Box>
+  )
+}
