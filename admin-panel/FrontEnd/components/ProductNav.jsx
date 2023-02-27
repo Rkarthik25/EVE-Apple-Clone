@@ -1,14 +1,14 @@
 import React from 'react'
 import axios from 'axios';
 import { Select,Box, Button } from "@chakra-ui/react";
-import Add_Modal from "../components/AddModal"
+import Add_Modal from "./AddModal"
 const ProductNav = (props) => {
 const [order,setOrder]= React.useState(1)
 const [Category,setCategory]= React.useState(null)
 
-const FilterByCategory=async(Category:string)=>{
+const FilterByCategory=async(Category)=>{
   
-  let data=  await axios.get(`http://localhost:4500/product?Category=${Category}`)
+  let data=  await axios.get(`https://friendly-fawn-pocketbook.cyclic.app/product?Category=${Category}`)
 props.onData(data.data)
   console.log(data)
 }
@@ -16,11 +16,11 @@ props.onData(data.data)
 
 const SortByPrice=async(order)=>{
     if(Category){
-    let data= await axios.get(`http://localhost:4500/product?Category=${Category}&PriceToAccess=${+order}`)
+    let data= await axios.get(`https://friendly-fawn-pocketbook.cyclic.app/product?Category=${Category}&PriceToAccess=${+order}`)
     props.onData(data.data)
     }
     else{
-        let data= await axios.get(`http://localhost:4500/product?PriceToAccess=${+order}`)
+        let data= await axios.get(`https://friendly-fawn-pocketbook.cyclic.app/product?PriceToAccess=${+order}`)
         props.onData(data.data)
     }
 

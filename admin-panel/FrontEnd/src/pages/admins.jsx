@@ -18,10 +18,10 @@ import {
   import { AuthContext } from 'context/authContext';
   import { useContext } from 'react';
 const Admins = () => {
-    const [admins,setAdmins]= React.useState<obj[]>([]);
+    const [admins,setAdmins]= React.useState([]);
     const {name}= useContext(AuthContext)
     const getAdmins=async ()=>{
-      let admins=await  axios.get("http://localhost:4500/admin")
+      let admins=await  axios.get("https://friendly-fawn-pocketbook.cyclic.app/admin")
      setAdmins(admins.data)
 
     }
@@ -47,7 +47,7 @@ getAdmins()
     </Thead>
     <Tbody>
         {
-             admins.map((el)=><SingleRow Name={el.firstName} email={el.email}  mobile={el.mobile} GST_no={el.GST_no} status={el.status}/>)
+             admins.map((el)=><SingleRow key={el._id} Name={el.firstName} email={el.email}  mobile={el.mobile} GST_no={el.GST_no} status={el.status}/>)
         }
     </Tbody>
 </Table>

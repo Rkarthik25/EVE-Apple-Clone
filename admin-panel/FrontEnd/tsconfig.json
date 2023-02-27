@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/admin.js", "components/EditModal.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/admin.js", "components/EditModal.jsx", "components/ProductNav.jsx", "components/Navbar.jsx", "components/StatsHome.jsx", "components/ProductRow.jsx", "src/pages/admins.jsx", "components/Sidebar.jsx", "context/authContext.jsx", "src/pages/inventory.jsx", "src/pages/registration.jsx"],
   "exclude": ["node_modules"]
 }

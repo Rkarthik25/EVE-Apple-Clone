@@ -22,7 +22,7 @@ setForm({...form,[e.target.name]:e.target.value})
 }
 console.log(form)
 const handleUpdate=async()=>{
-await axios.patch(`http://localhost:4500/product/update/${data._id}`,form).then(res=>{
+await axios.patch(`https://friendly-fawn-pocketbook.cyclic.app/product/update/${data._id}`,form).then(res=>{
   toast({
     title: "Product has been updated",
     status: 'success',
