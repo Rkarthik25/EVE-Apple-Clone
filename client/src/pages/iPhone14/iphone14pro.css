@@ -1,0 +1,76 @@
+#iphone_container >  * {
+  background-color:black
+  }
+#iphone_container h1 {
+  width: 50%;
+  margin: auto;
+  color: white;
+}
+#iphone_container h4 {
+  color: white;
+}
+#iphone_container {
+  text-align: center;
+}
+#gradient_text {
+  font-size: 250%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(166, 88, 205, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+#mid_gradient {
+  margin-top: 10%;
+}
+#mid_gradient h1 {
+  text-align: center;
+  font-size: 600%;
+}
+#mid_gradient h2 {
+  color: white;
+}
+#isecurity {
+  font-size: smaller;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#isecurity img {
+  width: 20%;
+}
+#dynamic_island_desc {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 6%;
+  font-size: 50%;
+  display: flex;
+}
+#dynamic_island_desc h1 {
+  width: 40%;
+  text-align: center;
+}
+#photos {
+  margin-top: 5%;
+  margin-bottom: 7%;
+  display: flex;
+}
+#photos div {
+  width: 100%;
+}
+#photos img {
+  width: 80%;
+}
+#photos h3 {
+  width: 50%;
+  margin: auto;
+  color: white;
+}
+.footer_color > * {
+  color: white;
+}

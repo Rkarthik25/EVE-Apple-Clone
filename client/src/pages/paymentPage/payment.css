@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  background-color: #fff;
+  color: #1d1d1f;
+  font-style: normal;
+}
+
+.payment {
+  min-height: 350px;
+}
+
+.payment-optionContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+.payment-headerContainer {
+  margin: 65px 0 40px;
+  text-align: left;
+}
+
+.payment-headerTitle {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.payment-options {
+  border-bottom: 1px solid #d2d2d7;
+  text-align: left;
+}
+
+.payment-infull {
+  margin-bottom: 34px;
+}
+
+.infull-header {
+  max-width: 50%;
+  margin-bottom: 23px;
+}
+
+.infull-title {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1.16667;
+  font-weight: 600;
+  letter-spacing: 0.009em;
+}
+
+.infull-debitcard {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 14px;
+}
+
+.debitcard-btn{
+  max-width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 735px) {
+  .payment-options {
+    width: 57.64706rem;
+  }
+}
