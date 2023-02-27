@@ -14,7 +14,7 @@ This is a collaborative team project of five members to make a responsive E-comm
 2. Searching functionality
 3. Listing products
 4. Pseudo purchasing different products
-5. Admin excess for maintaining CRUD operations
+5. Admin access for maintaining CRUD operations
 
 ## Tech Stacks :-
 
