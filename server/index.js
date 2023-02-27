@@ -4,6 +4,7 @@ const { adminRouter } = require("./routes/admin.routes")
 const {productRouter} =  require("./routes/product.route")
 const { cartRouter } = require("./routes/cart.route");
 const { userRouter } = require("./routes/user.route")
+const { productRouter } = require("./routes/ProductRoute");
 const cors= require("cors")
 
 const app= express()
@@ -21,7 +22,7 @@ app.use("/users",userRouter)
 //if endpoint is "cart" then redirect it to the "cartRouter"
 app.use("/cart", cartRouter);
 
-
+app.use("/products",productRouter)
 
 app.listen(process.env.PORT, async () => {
   try {
