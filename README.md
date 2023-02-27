@@ -51,6 +51,11 @@ This is a collaborative team project of five members to make a responsive E-comm
 
 
 ### Product Page
+
+<img src="https://user-images.githubusercontent.com/108731705/221498979-742276a3-c577-48f2-b593-abf27454372c.png"/>
+
+
+### Payment Page
  
 <img src="https://user-images.githubusercontent.com/108731705/221498008-4fcfef7f-69da-46fa-b0d5-04ca40a1f06d.png"/>
  
@@ -58,6 +63,7 @@ This is a collaborative team project of five members to make a responsive E-comm
  ## Admin Panel
 <img src="https://user-images.githubusercontent.com/108731705/221496279-d4b1bb89-8121-42b6-865d-65ee3710f774.png"/>
 <img src="https://user-images.githubusercontent.com/108731705/221495757-bff20124-b655-4afe-92a9-4cbd5115d2f6.png"/>
+
 
 
 
