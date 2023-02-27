@@ -13,7 +13,7 @@ import { IoAddSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 
 const Checkout = () => {
-  const navigate = useNavigate
+  const navigate = useNavigate();
   return (
     <div className="checkout">
       <div className="checkout-container">
@@ -210,7 +210,9 @@ const Checkout = () => {
                 <div className="shipping-continueBtn">
                   <div className="shipping-continueContent">
                     <div className="shipping-continuemain">
-                      <button className="shipping-continueCheckout" onClick={()=>navigate("/payment")}>
+                      <button
+                        className="shipping-continueCheckout"
+                        onClick={() => navigate("/payment")}>
                         Continue to Payment
                       </button>
                     </div>
