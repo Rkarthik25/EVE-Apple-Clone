@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <Box display={"flex"} justifyContent={"space-between"}> 
 <Box cursor={"pointer"} onClick={()=>router.push("/")}>
- <Image  src={logo} alt="..." borderRadius="100" width={150} height={150}/>
+ <Image  src={logo} alt="..." width={150} height={150}/>
 </Box>
 <Box display={"flex"} justifyContent={"space-between"} w="10%">
 <Box>

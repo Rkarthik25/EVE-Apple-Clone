@@ -25,13 +25,13 @@ import Link from 'next/link';
     const toast= useToast()
 
     const handleSubmit=async()=>{
-      let result=await axios.post("http://localhost:4500/admin/login",{
+      let result=await axios.post("https://friendly-fawn-pocketbook.cyclic.app/admin/login",{
         email,password
       })
       console.log(result);
      let id= result?.data?.admin[0]?._id
     if(result.data.msg=="login successfull"){
-      await axios.patch(`http://localhost:4500/admin/update/${id}`,{
+      await axios.patch(`https://friendly-fawn-pocketbook.cyclic.app/admin/update/${id}`,{
         status:true
       })
       toast({

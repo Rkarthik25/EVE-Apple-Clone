@@ -39,7 +39,7 @@ const toast= useToast()
   const handleAddProduct=()=>{
     const payload={...formValues,ProductDescription:[ProductDescription] }
    console.log(payload)
-       axios.post("http://localhost:4500/product/create",payload).then(res=>{
+       axios.post("https://friendly-fawn-pocketbook.cyclic.app/product/create",payload).then(res=>{
         toast({
             title: "Product has been added",
             status: 'success',
