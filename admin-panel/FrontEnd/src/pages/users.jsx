@@ -20,7 +20,7 @@ const Users = () => {
     const [users,setUsers]= React.useState([])
      const {name}= useContext(AuthContext)
     const getUsers=async ()=>{
-      let users=await  axios.get("http://localhost:4500/users")
+      let users=await  axios.get("https://friendly-fawn-pocketbook.cyclic.app/users")
      setUsers(users.data)
 
     }

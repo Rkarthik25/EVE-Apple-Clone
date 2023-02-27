@@ -21,7 +21,7 @@ setModal(true)
     <Tr>
       <Td>{el.title}</Td>
       <Td>
-        <img src={el.img1} style={{width:"10%"}}  alt="product image" />
+        <Image src={el.img1} width={"50"} height={"50"} alt="product image" />
       </Td>
       <Td>
         {el.Category}

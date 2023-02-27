@@ -16,11 +16,11 @@ import ProductRow from 'components/ProductRow'
 import { AuthContext } from 'context/authContext';
 import { useContext } from 'react';
 import SignIn from 'components/SignIn'
-const inventory = () => {
+const Inventory = () => {
     const [products,setProducts]= React.useState([])
     const {name}= useContext(AuthContext)
     const getProducts=async()=>{
-let data= await axios.get("http://localhost:4500/product")
+let data= await axios.get("https://friendly-fawn-pocketbook.cyclic.app/product")
 console.log(data)
 setProducts(data.data)
     }
@@ -73,4 +73,4 @@ getProducts()
   
 
 
-export default inventory
+export default Inventory

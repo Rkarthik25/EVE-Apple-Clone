@@ -11,14 +11,13 @@ import {
   Button,
   Heading,
   Text,
-  useColorModeValue,
-  Link,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { useToast } from '@chakra-ui/react'
 import axios from "axios"
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-
+import Link from 'next/link';
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues] = useState({
@@ -30,14 +29,14 @@ export default function SignupCard() {
     mobile:""
   });
   const toast = useToast()
-  const handleInputChange = (event:any) => {
-    const { name,value } = event.target;
-    setFormValues({ ...formValues, [name]: value });
+  const handleInputChange = (event) => {
+    const { name,value } = event.target
+    setFormValues({ ...formValues, [name]: value })
     console.log(formValues)
-  };
+  }
   const handleSubmit=async()=>{
  try{
- let res= await axios.post("http://localhost:4500/admin/register",formValues)
+ let res= await axios.post("https://friendly-fawn-pocketbook.cyclic.app/admin/register",formValues)
  if(res.data=="This email is already registered with an account"){
  toast({
   title: res.data,
@@ -138,7 +137,7 @@ console.log(err)
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}>
-                Already a user? <Link color={'blue.400'}>Login</Link>
+                Already a user? <Link href={"/"} color={'blue.400'}>Login</Link>
               </Text>
             </Stack>
           </Stack>
